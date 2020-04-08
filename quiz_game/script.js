@@ -8,6 +8,7 @@ var qus1 = new Quiz("who is the founder of Apple?", ['Steve jobs','Mark Zuckerbe
 var qus2 = new Quiz("Arrays starts from ?" , ['1','2','0'], 2);
 var qus3 = new Quiz("select the framework/Library that uses js?", ['Django', 'Laravel' ,'React'], 2);
 var questions = [qus1,qus2,qus3];
+var userscore = 0;
 
 var question = {
     no: '1',
@@ -20,13 +21,31 @@ var question = {
        this.check(ans,no);
     },
     check: function(ans,no){
-        console.log(no);
-        if(ans == questions[no].crctans){
-            console.log('correct answer!!')
-        }else{
-            console.log('wrong answer!! try again');
+        if(ans != "exit"){
+            if(ans == questions[no].crctans){
+                userscore = userscore + 1;
+                console.log('correct answer!!');
+                console.log("user's score is " +  + userscore +" " +  "keep going!!")
+            }else{
+                console.log('wrong answer!! try again');
+                console.log("user's score is " +  + userscore +" " +  "keep going!!")
+            }
+            start();
         }
+        else{
+            console.log("Game ends!!");
+            console.log("User's Final Score is " + " " + userscore);
+        }
+        
+       
     }
 }
-var rand =Math.floor(Math.random() * 3);
-question.display(rand);
+
+
+function start(){
+    var rand =Math.floor(Math.random() * 3);
+    question.display(rand);
+    
+}
+
+start();
