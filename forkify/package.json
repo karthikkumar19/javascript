@@ -11,6 +11,9 @@
   "author": "Karthik kumar",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-polyfill": "^6.26.0",
     "webpack": "^4.42.1"
   },
   "devDependencies": {
